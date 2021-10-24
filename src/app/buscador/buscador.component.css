@@ -1,0 +1,36 @@
+.cardImagen {
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    transition: all ease 0.6s;
+}
+
+.cardImagen:hover {
+    background-color: #D9D9D9;
+    transition: all ease 0.6s;
+}
+
+.dataImagen span:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.infoCards {
+    font-size: 16px;
+}
+
+.tags span{
+    color: grey;
+}
+
+.fa-heart {
+    color: #B90000;
+}
+
+.fa-eye {
+    color: #0064B9;
+}
+
+.fa-download {
+    color: green;
+}

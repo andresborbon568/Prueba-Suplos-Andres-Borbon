@@ -1,0 +1,33 @@
+<div class="row col-12 m-0 mt-3 justify-content-center">
+    <form class="col-4 input-group mb-3">
+        <input type="text" class="form-control ml-sm-0 ml-lg-2 mt-2 mb-2" placeholder="Buscar..." [(ngModel)]="inputBuscar" id="tagsImagenes" name="tagsImagenes">
+        <div class="input-group-append">
+            <button type="button" class="btn btn-primary col-12 mt-2 mr-2 mb-2 btnBuscar" (click)="filtrarInfo()">Buscar</button>
+        </div>
+        <div class="dropdown ml-sm-0 ml-lg-2 mt-2 mb-2">
+            <select class="btn btn-primary" type="button" #dropdownMenuButton (change)="filtrarPorCategoria(dropdownMenuButton)">
+              <option value="0" class="text-left">Categoria</option>
+              <option value="science" class="text-left">Ciencia</option>
+              <option value="education" class="text-left">Educación</option>
+              <option value="people" class="text-left">Gente</option>
+              <option value="feelings" class="text-left">Sentimientos</option>
+              <option value="computer" class="text-left">Computadora</option>
+              <option value="buildings" class="text-left">Construcciones</option>
+            </select>
+          </div>
+    </form>
+    <div class="row col-10 justify-content-center align-items-center">
+        <div class="cardImagen col-sm-5 col-lg-3 p-2 m-2 border border-dark" [id]="i" (click)="expandirImagen(i)" *ngFor="let imagen of data; let i = index;">
+            <h6 class="text-center"> {{imagen.user}} </h6>
+            <img [src]="imagen.largeImageURL" class="col-12 p-1">
+            <div class="row col-12 m-0 infoCards">
+                <div class="col-sm-12 col-lg-12 tags mt-1">Tags: <span> {{imagen.tags}} </span></div>
+                <div class="col-sm-12 col-lg-12 m-3  text-right dataImagen" *ngIf="cardActiva == i">
+                    <span class="ml-1 mr-1"><i class="fa fa-heart"></i> {{imagen.likes}} </span>
+                    <span class="m-1 mr-1"><i class="fa fa-eye"></i> {{imagen.views}} </span>
+                    <span class="m-1 mr-1"><i class="fa fa-download"></i> {{imagen.downloads}} </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
